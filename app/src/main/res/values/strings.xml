@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ClassContentDetailModule</string>
+    <string-array name="classtype">
+        <item>Select Your Class</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+    </string-array>
+</resources>
