@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="0dp"
+    android:background="#fff"
+    android:layout_margin="2dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_margin="8dp"
+        android:padding="5dp">
+        <VideoView
+            android:id="@+id/vpath"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:textColor="#000"
+            android:gravity="center" />
+        <TextView
+            android:id="@+id/vname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name of the Course"
+            android:layout_marginTop="8dp"
+            android:layout_below="@+id/vpath"/>
+        <TextView
+            android:id="@+id/vsub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subject |"
+            android:layout_marginTop="8dp"
+            android:layout_below="@+id/vname"/>
+        <TextView
+            android:id="@+id/vdesp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Describe the following into words"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/vsub"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/vname"/>
+        <TextView
+            android:id="@+id/vofclass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9th class |"
+            android:layout_marginTop="8dp"
+            android:layout_below="@+id/vdesp"/>
+        <TextView
+            android:id="@+id/vid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/vofclass"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/vdesp"/>
+        <TextView
+            android:id="@+id/vdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/vid"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/vdesp"/>
+    </RelativeLayout>
+</LinearLayout>

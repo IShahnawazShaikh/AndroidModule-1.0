@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.shahnawazshaikh.classcontentdetailmodule">
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"></uses-permission>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
 
     <application
         android:allowBackup="true"

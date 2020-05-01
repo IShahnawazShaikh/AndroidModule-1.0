@@ -1,6 +1,8 @@
 package com.shahnawazshaikh.classcontentdetailmodule;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
@@ -22,21 +24,25 @@ import com.android.volley.toolbox.DiskBasedCache;
 import com.android.volley.toolbox.HurlStack;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.shahnawazshaikh.classcontentdetailmodule.adapter.CourseAdapter;
+import com.shahnawazshaikh.classcontentdetailmodule.bean.Course;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
     Spinner spinner;
     String classtype;
+    List<Course> list;
+    RecyclerView recyclerView;
+    LinearLayoutManager manager;
     private static String CLASS_URL="http://www.digitalcatnyx.store/api/class_detail.php";
-
-
-
     //private static String TEST_URL="https://amygdaloid-cleat.000webhostapp.com/digitalcatnyx/register.php";
 
     @Override
@@ -45,8 +51,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         spinner=findViewById(R.id.ClassType);
+        recyclerView=findViewById(R.id.recycler);
+        recyclerView.setHasFixedSize(true);
+        manager=new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(manager);
+
         ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(MainActivity.this,R.array.classtype,R.layout.support_simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
+        list =new ArrayList<Course>();
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -90,7 +102,12 @@ public class MainActivity extends AppCompatActivity {
                                 System.out.println("Video Path="+detail.getString("vpath"));
                                 System.out.println("Subject="+detail.getString("vsub"));
                                 System.out.println("");
+
+                                list.add(new Course(detail.getString("vid"),detail.getString("vname"),detail.getString("vofclass")
+                                       ,detail.getString("vdesp"),detail.getString("vdate"),detail.getString("vsub"),detail.getString("vpath")));
                              }
+                            CourseAdapter adapter1 = new CourseAdapter(MainActivity.this,list);
+                            recyclerView.setAdapter(adapter1);
                         }
                         catch (JSONException e) {
                             e.printStackTrace();
