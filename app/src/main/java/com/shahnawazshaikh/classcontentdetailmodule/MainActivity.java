@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                                 JSONObject detail = array.getJSONObject(i);
                                 Toast.makeText(getApplicationContext(),""+detail.getString("vid"),Toast.LENGTH_LONG).show();
                                 System.out.println("id="+detail.getString("vid"));
-                                System.out.println("Name="+detail.getString("vname"));
+                                System.out.println("Name Of the Course="+detail.getString("vname"));
                                 System.out.println("class="+detail.getString("vofclass"));
                                 System.out.println("Description="+detail.getString("vdesp"));
                                 System.out.println("Date="+detail.getString("vdate"));
