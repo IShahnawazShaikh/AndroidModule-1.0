@@ -41,12 +41,13 @@ public class CourseAdapter extends RecyclerView.Adapter <CourseAdapter.ItemsView
         Uri uri = Uri.parse(course.getVpath());
         holder.vpath.setVideoURI(uri);
         holder.vpath.start();
+
         holder.vname.setText(course.getVname());
         holder.vid.setText(course.getVid());
         holder.vdesp.setText("Description| "+course.getVdesp());
         holder.vofclass.setText("Class|"+course.getVofclass());
         holder.vdate.setText(course.getVdate());
-        holder.vsub.setText("Subject: "+course.getVsub());
+        holder.vsub.setText("Subject| "+course.getVsub());
     }
 
     @Override
